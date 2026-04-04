@@ -4,6 +4,7 @@ import { AppState } from 'react-native';
 import { SessionTimeoutProvider } from '../SessionTimeoutProvider';
 import { useSessionTimeout } from '../SessionTimeoutContext';
 import NativeSessionTimeout from '../NativeModule';
+import type { SessionTimeoutContextValue } from '../types';
 
 // Mock the native module
 jest.mock('../NativeModule', () => ({
@@ -185,7 +186,7 @@ describe('SessionTimeoutProvider', () => {
   });
 
   it('should reset timer when activity is detected', async () => {
-    let contextValue: any;
+    let contextValue: SessionTimeoutContextValue;
     const TestComponentWithContext = () => {
       contextValue = useSessionTimeout();
       return null;
@@ -207,7 +208,7 @@ describe('SessionTimeoutProvider', () => {
   });
 
   it('should allow manual pause of timer', async () => {
-    let contextValue: any;
+    let contextValue: SessionTimeoutContextValue;
     const TestComponentWithContext = () => {
       contextValue = useSessionTimeout();
       return null;
@@ -229,7 +230,7 @@ describe('SessionTimeoutProvider', () => {
   });
 
   it('should allow manual resume of timer', async () => {
-    let contextValue: any;
+    let contextValue: SessionTimeoutContextValue;
     const TestComponentWithContext = () => {
       contextValue = useSessionTimeout();
       return null;
@@ -318,7 +319,7 @@ describe('SessionTimeoutProvider', () => {
   });
 
   it('should reset warning state when timer is reset', async () => {
-    let contextValue: any;
+    let contextValue: SessionTimeoutContextValue;
     const TestComponentWithContext = () => {
       contextValue = useSessionTimeout();
       return null;
