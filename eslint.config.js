@@ -1,13 +1,34 @@
-import reactNative from '@react-native-community/eslint-config';
-import prettier from 'eslint-config-prettier';
-import prettierPlugin from 'eslint-plugin-prettier';
+import js from '@eslint/js';
+import prettier from 'eslint-plugin-prettier';
 
 export default [
-  ...reactNative,
-  prettier,
+  js.configs.recommended,
   {
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: {
+        console: 'readonly',
+        process: 'readonly',
+        Buffer: 'readonly',
+        __dirname: 'readonly',
+        __filename: 'readonly',
+        module: 'readonly',
+        require: 'readonly',
+        global: 'readonly',
+        jest: 'readonly',
+        describe: 'readonly',
+        it: 'readonly',
+        test: 'readonly',
+        expect: 'readonly',
+        beforeEach: 'readonly',
+        afterEach: 'readonly',
+        beforeAll: 'readonly',
+        afterAll: 'readonly',
+      },
+    },
     plugins: {
-      prettier: prettierPlugin,
+      prettier,
     },
     rules: {
       'prettier/prettier': [
@@ -23,6 +44,14 @@ export default [
     },
   },
   {
-    ignores: ['node_modules/', 'lib/', '**/*.d.ts'],
+    ignores: [
+      'node_modules/',
+      'lib/',
+      'coverage/',
+      '**/*.d.ts',
+      'example/',
+      'ios/',
+      'android/',
+    ],
   },
 ];

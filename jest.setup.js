@@ -1,4 +1,3 @@
-/* eslint-env jest */
 // Mock Dimensions first, before any other mocks
 jest.mock('react-native/Libraries/Utilities/Dimensions', () => {
   const Dimensions = {
@@ -87,14 +86,6 @@ jest.mock('react-native', () => {
       create: jest.fn(() => ({
         panHandlers: {},
       })),
-    },
-    configurable: true,
-  });
-
-  // Mock StyleSheet.create
-  Object.defineProperty(RN, 'StyleSheet', {
-    value: {
-      create: jest.fn((styles) => styles),
     },
     configurable: true,
   });
