@@ -22,3 +22,6 @@ coverage/
 coverage-final.json
 lcov.info
 .nyc_output/
+
+# Example app lockfile (not needed for library distribution)
+example/package-lock.json
