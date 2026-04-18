@@ -87,7 +87,7 @@
   "jest": {
     "preset": "react-native",
     "setupFiles": [
-      "<rootDir>/jest.polyfills.js"
+      "<rootDir>/jest.polyfills.cjs"
     ],
     "modulePathIgnorePatterns": [
       "<rootDir>/example/node_modules",
@@ -97,7 +97,7 @@
       "<rootDir>/example/__tests__/"
     ],
     "setupFilesAfterEnv": [
-      "<rootDir>/jest.setup.js"
+      "<rootDir>/jest.setup.cjs"
     ],
     "transformIgnorePatterns": [
       "node_modules/(?!(react-native|@react-native|@react-navigation)/)"
