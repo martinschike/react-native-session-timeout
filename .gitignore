@@ -16,3 +16,9 @@ xcuserdata/
 *.xcscmblueprint
 *.xccheckout
 Pods/
+
+# Coverage files
+coverage/
+coverage-final.json
+lcov.info
+.nyc_output/
